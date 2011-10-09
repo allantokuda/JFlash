@@ -57,6 +57,11 @@ class TermsController < ApplicationController
 
 		@prompt = getForm(@term, params[:from])
 		@answer = getForm(@term, params[:to])
+
+		if (params[:from] == "english" and params[:to] == "kanji")
+			@second_answer = getForm(@term, "kana")
+		end
+
     respond_to do |format|
       format.html # quiz.html.erb
     end
