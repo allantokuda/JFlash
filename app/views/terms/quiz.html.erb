@@ -1,4 +1,4 @@
-<div style="width: 100%; padding-top: 150px; text-align: center; vertical-align: center;" onclick="showAnswer()">
+<div style="background: #def; width: 100%; padding-top: 150px; text-align: center; vertical-align: center;" onclick="showAnswer()">
 	<font size="30"><%= @prompt %></font>
 	<br><br><br>
 	<div id="answer" style="display:none; ">
@@ -7,10 +7,21 @@
 	<br><br><br><br>
 	<br>
 
-<%= link_to 'Edit', edit_term_path(@term) %> |
+</div>
+
+<%= link_to 'Edit this term', edit_term_path(@term) %> |
 <%= link_to 'Back to listing', terms_path %> |
 <%= link_to 'New term', new_term_path, :id => 'new_term_link' %>
-</div>
+<br>
+<br>
+
+<%= link_to 'かな to English' , quiz_terms_path + '?from=kana&to=english' %><br>
+<%= link_to 'English to かな' , quiz_terms_path + '?from=english&to=kana' %><br>
+<%= link_to '漢字 to English', quiz_terms_path + '?from=kanji&to=english' %><br>
+<%= link_to 'English to 漢字', quiz_terms_path + '?from=english&to=kanji' %><br>
+<%= link_to '漢字 to English', quiz_terms_path + '?from=kanji&to=english' %><br>
+<%= link_to 'かな to 漢字'   , quiz_terms_path + '?from=kana&to=kanji' %><br>
+
 
 <script type="text/javascript">
 	document.getElementById("new_term_link").focus()
