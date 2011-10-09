@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>English:</b>
+  <%= @term.english %>
+</p>
+
+<p>
+  <b>Romanji:</b>
+  <%= @term.romanji %>
+</p>
+
+<p>
+  <b>Kana:</b>
+  <%= @term.kana %>
+</p>
+
+<p>
+  <b>Kanji:</b>
+  <%= @term.kanji %>
+</p>
+
+
+<%= link_to 'Edit', edit_term_path(@term) %> |
+<%= link_to 'Back to listing', terms_path %> |
+<%= link_to 'New term', new_term_path, :id => 'new_term_link' %>
+
+<script type="text/javascript">
+	document.getElementById("new_term_link").focus()
+</script>

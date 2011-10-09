@@ -1,0 +1,27 @@
+<div style="width: 100%; padding-top: 150px; text-align: center; vertical-align: center;" onclick="showAnswer()">
+	<font size="30"><%= @prompt %></font>
+	<br><br><br>
+	<div id="answer" style="display:none; ">
+		<font style="font-size:30pt;"><%= @answer %></font>
+	</div>
+	<br><br><br><br>
+	<br>
+
+<%= link_to 'Edit', edit_term_path(@term) %> |
+<%= link_to 'Back to listing', terms_path %> |
+<%= link_to 'New term', new_term_path, :id => 'new_term_link' %>
+</div>
+
+<script type="text/javascript">
+	document.getElementById("new_term_link").focus()
+	state=0;
+	function showAnswer() {
+		if (state == 0) {
+			document.getElementById("answer").style.display = "block"
+			state = state + 1
+		} else
+			window.location = window.location
+			//.href = unescape(window.location.pathname)
+			
+	}
+</script>

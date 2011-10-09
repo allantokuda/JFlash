@@ -1,0 +1,38 @@
+<%= form_for(@term) do |f| %>
+  <% if @term.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@term.errors.count, "error") %> prohibited this term from being saved:</h2>
+
+      <ul>
+      <% @term.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :english, :id => "english_field" %><br />
+    <%= f.text_field :english %>
+  </div>
+  <div class="field">
+    <%= f.label :romanji %><br />
+    <%= f.text_field :romanji %>
+  </div>
+  <div class="field">
+    <%= f.label :kana %><br />
+    <%= f.text_field :kana %>
+  </div>
+  <div class="field">
+    <%= f.label :kanji %><br />
+    <%= f.text_field :kanji %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+	<script type="text/javascript">
+		document.getElementById("english_field").focus();
+	</script>
+
+<% end %>

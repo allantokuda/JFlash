@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  english: 
+  romanji: 
+  kana: 
+  kanji: MyString
+
+two:
+  english: 
+  romanji: 
+  kana: 
+  kanji: MyString
