@@ -55,8 +55,11 @@ class TermsController < ApplicationController
 		
 		@term = Term.find(:first, :order=>'random()')
 
-		@prompt = getForm(@term, params[:from])
-		@answer = getForm(@term, params[:to])
+		from_form = params[:from] || "kana"
+		to_form   = params[:to  ] || "english"
+
+		@prompt = getForm(@term, from_form)
+		@answer = getForm(@term, to_form)
 
 		if (params[:from] == "english" and params[:to] == "kanji")
 			@second_answer = getForm(@term, "kana")

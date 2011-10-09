@@ -29,11 +29,12 @@
 	state=0;
 	function showAnswer() {
 		if (state == 0) {
+			//1st click: show the answer
 			document.getElementById("answer").style.display = "block"
 			state = state + 1
-		} else
+		} else {
+			//2nd click: reload page for new word
 			window.location = window.location
-			//.href = unescape(window.location.pathname)
-			
+		}
 	}
 </script>
