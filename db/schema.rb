@@ -11,15 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008175908) do
+ActiveRecord::Schema.define(:version => 20111008185401) do
+
+  create_table "quiz", :force => true do |t|
+    t.integer  "term_id",                :null => false
+    t.integer  "level",   :default => 1, :null => false
+    t.datetime "given"
+  end
 
   create_table "terms", :force => true do |t|
     t.string   "english"
     t.string   "romanji"
     t.string   "kana"
     t.string   "kanji"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
