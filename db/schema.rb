@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008185401) do
+ActiveRecord::Schema.define(:version => 20131021032759) do
 
   create_table "quiz", :force => true do |t|
     t.integer  "term_id",                :null => false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20111008185401) do
     t.string   "kanji"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "level"
   end
 
 end
